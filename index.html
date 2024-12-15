@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SDP-W-2-P-2</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div id="all-food-container">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div
+      id="searchBox"
+      style="
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <input
+        type="text"
+        name=""
+        id="searchBox"
+        placeholder="Enter Something"
+        style="text-align: center; margin: auto"
+      />
     </div>
+    <div id="searchBtn" style="display: flex;justify-content: center;align-items: center;margin-top: 10px;">
+      <button
+        style="
+          background-color: #0284c7;
+          padding: 10px;
+          border: none;
+          border-radius: 5%;
+        "
+      >
+        Submit
+      </button>
+    </div>
+    <div id="selectedItem"></div>
+    <div id="all-food-container"></div>
     <script src="control.js"></script>
-</body>
+  </body>
 </html>
