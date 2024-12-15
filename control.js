@@ -12,7 +12,7 @@ const loadFood=()=>{
             <h3>${element.strCategory}</h3>
           </div>
            `
-           parent.appendChild(div)
+           parent.appendChild(div);
         });
     })
     .catch((err)=>console.log("Something went wrong"));
