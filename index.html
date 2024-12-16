@@ -7,35 +7,25 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div
-      id="searchBox"
-      style="
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-      "
-    >
+    <form action="" onclick="searchFoodDetails()">
       <input
-        type="text"
-        name=""
-        id="searchBox"
-        placeholder="Enter Something"
-        style="text-align: center; margin: auto"
-      />
-    </div>
-    <div id="searchBtn" style="display: flex;justify-content: center;align-items: center;margin-top: 10px;">
-      <button
-        style="
-          background-color: #0284c7;
-          padding: 10px;
-          border: none;
-          border-radius: 5%;
-        "
-      >
-        Submit
-      </button>
-    </div>
+      type="text"
+      name=""
+      id="searchBox"
+      placeholder="Enter Something"
+      style="text-align: center; margin: auto"
+    /> <button id="searchBtn"
+    style="
+      background-color: #0284c7;
+      padding: 10px;
+      border: none;
+      border-radius: 5%;
+    "
+  >
+    Submit
+  </button>
+    </form>
+    <h1 id="totalFood"></h1>
     <div id="selectedItem" style="display: flex;justify-content: center;padding: 50px;"></div>
     <div id="all-food-container"></div>
     <script src="control.js"></script>
