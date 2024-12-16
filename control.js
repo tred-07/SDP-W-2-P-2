@@ -1,5 +1,5 @@
 const loadFood = () => {
-  fetch("https://www.themealdb.com/api/json/v1/1/search.php?f=a")
+  fetch("https://www.themealdb.com/api/json/v1/1/search.php?f=b")
     .then((res) => res.json())
     .then((res) => {
       console.log(res);
@@ -20,21 +20,28 @@ const loadFood = () => {
 };
 
 const foodDetails = (id) => {
+  const parent = document.getElementById("selectedItem");
+  const div = document.createElement("div");
+  selectedItem.innerHTML = ``;
   fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
     .then((res) => res.json())
     .then((data) => {
-      data['meals'].forEach((el) => {
-        const parent = document.getElementById("selectedItem");
-        const div = document.createElement("div");
-        div.innerHTML = `
-        <h1>Ok</h1>
-        `;
-        console.log(el["strArea"],el['strCategory'],el['strInstructions'],el['strMeal'],el['strMealThumb'],el['strTags'],el['strYoutube'])
-        parent.appendChild(div);
-      });
+      if (data["meals"].length > 0) {
+        data["meals"].forEach((el) => {
+          div.innerHTML = `
+          <img class="foodDetailsImg" src="${el["strMealThumb"]}">
+          <h1>${el["strMeal"]}</h1> 
+          <h1>${el["strCategory"]}</h1>
+          <h1> ${el["strTags"]}</h1>
+          <h3>${el["strIngredient1"]}, ${el["strIngredient2"]}, ${el["strIngredient3"]}, ${el["strIngredient4"]}, ${el["strIngredient5"]}, ${el["strIngredient6"]}, ${el["strIngredient7"]}, ${el["strIngredient8"]}</h3>
+          <h3><a href="${el["strYoutube"]}">Click here</a></h3>
+          `;
+          console.log(el["strArea"], el["strInstructions"], el["strYoutube"]);
+          parent.appendChild(div);
+        });
+      }
     })
     .catch((err) => console.log(err));
 };
 
 loadFood();
-

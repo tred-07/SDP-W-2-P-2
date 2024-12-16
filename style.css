@@ -1,5 +1,30 @@
-.food-card{
-    border: 1px solid black;
+.food-card {
     margin: 20px;
+    padding: 10px;
     text-align: center;
+    width: 300px;
+}
+
+.food-card h3 {
+    width: 350px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+img {
+    width: 100%;
+}
+
+.foodDetailsImg{
+    width: 500px;
+    height: 500px;
+}
+#all-food-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 50px ;
 }
